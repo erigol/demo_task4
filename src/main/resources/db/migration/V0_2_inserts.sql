@@ -1,11 +1,11 @@
 
 -- Step 1:
 INSERT INTO customer("customer_id", "document_type", "document_number", "name", "surname", "country", "telephone") VALUES
-    (0123456789, 'passport', 'J12393496', 'Tony', 'Stark', 'US', '600000001'),
-    (1234567890, 'passport', 'ABA9875413', 'Peter', 'Parker', 'US', '600000002'),
-    (2345678901, 'passport', 'KF0192332C', 'Brian Jeremy', 'Braddock', 'UK', '600000003'),
-    (3456789012, 'dni', '12345678A', 'Paquito', 'Chocolatero', 'ES', '600000004'),
-    (4567890123, 'passport', 'RU146757245', 'Natalia Alianovna', 'Romanova', 'RU', '600000005');
+    (0123456789, 1, 'J12393496', 'Tony', 'Stark', 'US', '600000001'),
+    (1234567890, 1, 'ABA9875413', 'Peter', 'Parker', 'US', '600000002'),
+    (2345678901, 1, 'KF0192332C', 'Brian Jeremy', 'Braddock', 'UK', '600000003'),
+    (3456789012, 1, '12345678A', 'Paquito', 'Chocolatero', 'ES', '600000004'),
+    (4567890123, 1, 'RU146757245', 'Natalia Alianovna', 'Romanova', 'RU', '600000005');
 
 INSERT INTO beneficiary("beneficiary_id") VALUES
     (1111111111),

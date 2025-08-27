@@ -1,6 +1,6 @@
 CREATE TABLE IF NOT EXISTS customer (
 	Customer_id varchar(10) NOT NULL,
-	Document_type varchar(8) NOT NULL,
+	Document_type integer NOT NULL,
 	Document_number varchar(50) NOT NULL,
 	Name varchar(100) NOT NULL,
 	Surname varchar(100) NOT NULL,
@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS customer (
 
 CREATE TABLE IF NOT EXISTS payment (
 	Payment_id bigserial NOT NULL,
-	Payment_type varchar(10) NOT NULL,
+	Payment_type int NOT NULL,
 	Amount decimal NOT NULL,
 	Creation_Date timestamp NOT NULL DEFAULT (now() at time zone 'utc'),
 	Updated_Date timestamp DEFAULT (now() at time zone 'utc'),
@@ -30,5 +30,5 @@ CREATE TABLE IF NOT EXISTS beneficiary (
 	CONSTRAINT beneficiary_id_pkey PRIMARY KEY (Beneficiary_id)
 );
 
-ALTER TABLE payment ADD CONSTRAINT payment_customer_id_fkey FOREIGN KEY (Customer_id) REFERENCES customer (Customer_id);
-ALTER TABLE payment ADD CONSTRAINT beneficiary_id_fkey FOREIGN KEY (Beneficiary_id) REFERENCES beneficiary (Beneficiary_id);
+ALTER TABLE payment ADD CONSTRAINT payment_customer_id_fkey2 FOREIGN KEY (Customer_id) REFERENCES customer (Customer_id);
+ALTER TABLE payment ADD CONSTRAINT beneficiary_id_fkey2 FOREIGN KEY (Beneficiary_id) REFERENCES beneficiary (Beneficiary_id);

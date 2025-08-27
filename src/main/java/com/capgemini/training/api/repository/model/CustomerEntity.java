@@ -14,14 +14,16 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.experimental.SuperBuilder;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
-@Entity
-@Table(name = "customer")
+//@Builder
+@SuperBuilder
+@Entity                   //---
+@Table(name = "customer")  //---
 public class CustomerEntity extends BaseEntity {
 
   @Id

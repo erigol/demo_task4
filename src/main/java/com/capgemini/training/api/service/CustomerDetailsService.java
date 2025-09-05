@@ -3,9 +3,13 @@ package com.capgemini.training.api.service;
 import com.capgemini.training.api.exceptions.CustomerNotFoundException;
 import com.capgemini.training.api.model.CustomerDetails;
 import com.capgemini.training.api.repository.CustomerRepository;
+import com.capgemini.training.api.repository.model.CustomerEntity;
 import com.capgemini.training.api.service.mapper.CustomerMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -19,4 +23,13 @@ public class CustomerDetailsService {
         .map(CustomerMapper::toCustomerDetails)
         .orElseThrow(() ->new CustomerNotFoundException("customer does not exist in database"));
   }
+
+
+
+    public List<CustomerDetails> getCustomerDetails(){
+        return customerRepository
+                .findAll().stream()
+                .map(CustomerMapper::toCustomerDetails).collect(Collectors.toList());
+
+    }
 }
